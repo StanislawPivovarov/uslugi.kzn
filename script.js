@@ -19,13 +19,47 @@ var bgimage = [
 ];
 
 var positioning = [
-    'flex-direction: inherit; align-items: end',
-    'flex-direction: inherit; align-items: start',
-    '',
-    ''
+    'top',
+    'normal',
+    'bottom'
+
 ]
+
 
 window.onload = function(){
     $('.welcome').css({'background-image':'url(' + bgimage[Math.floor(Math.random()*bgimage.length)] + ')'});
     $('.quote').html(quotes[Math.floor(Math.random()*quotes.length)])
+
+    if(positioning[Math.floor(Math.random()*positioning.length)] == positioning[0]){
+        $('.welcome__top').css({
+            'display':'flex'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'none'
+        });
+    } if(positioning[Math.floor(Math.random()*positioning.length)] == positioning[1]){
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'flex'
+        });
+    } if(positioning[Math.floor(Math.random()*positioning.length)] == positioning[2]){
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'flex'
+        });
+        $('.welcome__main').css({
+            'display':'none'
+        });
     }
+
+}
