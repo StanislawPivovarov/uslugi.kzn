@@ -5,9 +5,10 @@ const browserSync = require('browser-sync').create();
 const watch = require('gulp-watch');
 const cssmin = require('gulp-cssmin')
 const zip = require('gulp-zip');
+const gzip = require('gulp-gzip');
 const { series } = require('gulp');
 const jsmin = require('gulp-jsmin');
-
+const tar = require('gulp-tar');
 
 gulp.task('css-min', (cb) => {
   gulp.src('./style.css')
@@ -38,10 +39,11 @@ gulp.task('fonts', (cb) =>{
   .pipe(gulp.dest('dist/fonts'))
   cb()
 })
-gulp.task('to-zip', (cb) =>{
+gulp.task('to-gzip', (cb) =>{
   gulp.src('dist/**')
-  .pipe(zip('archive.zip'))
-  .pipe(gulp.dest('dist'))
+  .pipe(tar('archive.tar'))
+  .pipe(gzip())
+  .pipe(gulp.dest('./'))
   cb()
 })
 
