@@ -11,20 +11,23 @@ var quotes = [
 ];
 
 var bgimage = [
-    '/imgs/kazan_01.webp',
-    '/imgs/kazan_02.webp',
-    '/imgs/kazan_03.webp',
-    '/imgs/kazan_06.webp',
-    '/imgs/kazan_07.webp',
-    '/imgs/kazan_09.webp',
-    '/imgs/kazan_10.webp',
-    '/imgs/kazan_12.webp',
+    'imgs/kazan_01.webp',
+    'imgs/kazan_02.webp',
+    'imgs/kazan_03.webp',
+    'imgs/kazan_06.webp',
+    'imgs/kazan_07.webp',
+    'imgs/kazan_09.webp',
+    'imgs/kazan_10.webp',
+    'imgs/kazan_12.webp',
 ];
 
 var positioning = [
     'top',
     'normal',
-    'bottom'
+    'bottom',
+    'top-right',
+    'normal-right',
+    'bottom-right'
 
 ];
 
@@ -36,14 +39,18 @@ window.onload = function(){
     $('.welcome').css({'background-image':'url(' + bgimage[Math.floor(Math.random()*bgimage.length)] + ')'});
     $('.quote').html(quotes[Math.floor(Math.random()*quotes.length)])
 
-    if(positioning[randomPos] == positioning[0]){
+    if(positioning[randomPos] == positioning[0]){ //top
             $('.welcome__top').css({
                 'display':'flex'
             });
             $('.welcome__bottom').css({
                 'display':'none'
             });
-    } if(positioning[randomPos] == positioning[1]){
+            $('.welcome__main').css({
+                'display':'none'
+            });
+
+    } if(positioning[randomPos] == positioning[1]){ //main
         
         $('.welcome__top').css({
             'display':'none'
@@ -54,21 +61,77 @@ window.onload = function(){
         $('.welcome__main').css({
             'display':'flex'
         });
-    } if(positioning[randomPos] == positioning[2]){
+    } if(positioning[randomPos] == positioning[2]){ //bottom
             $('.welcome__top').css({
                 'display':'none'
             });
             $('.welcome__bottom').css({
                 'display':'flex'
             });
-    }   
+            $('.welcome__main').css({
+                'display':'none'
+            });
+    } if(positioning[randomPos] == positioning[3]){ //top-right
+        $('.welcome__top').css({
+            'display':'flex'
+        })
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('welcome__main').css({
+            'display':'none'
+        })
+        $('.welcome').css({
+            'display': 'flex',
+            'flex-direction': 'row-reverse'
+        })
+    } if(positioning[randomPos] == positioning[4]){ //normal-right
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'flex'
+        });
+        $('.welcome').css({
+            'flex-direction': 'row-reverse'
+        });
+    } if(positioning[randomPos] == positioning[5]){ //bottom-right
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'flex'
+        });
+        $('.welcome').css({
+            'display': 'flex',
+            'flex-direction': 'row-reverse'
+        })
+    } 
+
+    if(window.matchMedia("(max-width: 992px)").matches){
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'flex',
+        });
+        $('.welcome').css({
+            'flex-direction': 'column'
+        })
+    }
 };
+
 
 var mq = window.matchMedia("(max-width: 992px)")
 
 function handleChanges(e){
     if(e.matches){
-        console.log('changes')
             $('.welcome__top').css({
                 'display':'none'
             });
@@ -76,10 +139,13 @@ function handleChanges(e){
                 'display':'none'
             });
             $('.welcome__main').css({
-                'display':'flex'
+                'display':'flex',
             });
+            $('.welcome').css({
+                'flex-direction': 'column'
+            })
     } else{
-        if(positioning[randomPos] == positioning[0]){
+        if(positioning[randomPos] == positioning[0]){ //top
             $('.welcome__top').css({
                 'display':'flex'
             });
@@ -87,10 +153,12 @@ function handleChanges(e){
                 'display':'none'
             });
             $('.welcome__main').css({
-                'display':'none'
-            });
-
-    } if(positioning[randomPos] == positioning[1]){
+                'display': 'none'
+            })
+            $('.welcome').css({
+                'flex-direction':'row'
+            })
+    } if(positioning[randomPos] == positioning[1]){ //main
         
         $('.welcome__top').css({
             'display':'none'
@@ -101,17 +169,68 @@ function handleChanges(e){
         $('.welcome__main').css({
             'display':'flex'
         });
-    } if(positioning[randomPos] == positioning[2]){
+        $('.welcome').css({
+            'flex-direction':'row'
+        })
+    } if(positioning[randomPos] == positioning[2]){ //bottom
             $('.welcome__top').css({
                 'display':'none'
             });
             $('.welcome__bottom').css({
                 'display':'flex'
             });
-            $('.welcome__main').css({
+            $('.welcome__top-right').css({
                 'display':'none'
             });
-    }   
+            $('.welcome__main').css({
+                'display':'none'
+            })
+            $('.welcome').css({
+                'flex-direction':'row'
+            })
+    } if(positioning[randomPos] == positioning[3]){ //top-right
+        $('.welcome__top').css({
+            'display':'flex'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'none'
+        });
+        $('.welcome').css({
+            'display': 'flex',
+            'flex-direction': 'row-reverse'
+        })
+    } if(positioning[randomPos] == positioning[4]){ //normal-right
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'none'
+        });
+        $('.welcome__main').css({
+            'display':'flex'
+        });
+        $('.welcome').css({
+            'display':'flex',
+            'flex-direction': 'row-reverse'
+        });
+    } if(positioning[randomPos] == positioning[5]){ //bottom-right
+        $('.welcome__top').css({
+            'display':'none'
+        });
+        $('.welcome__bottom').css({
+            'display':'flex'
+        });
+        $('.welcome__main').css({
+            'display':'none'
+        });
+        $('.welcome').css({
+            'display': 'flex',
+            'flex-direction': 'row-reverse'
+        })
+    }
     }
 }
 mq.addListener(handleChanges)
