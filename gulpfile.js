@@ -47,4 +47,12 @@ gulp.task('to-gzip', (cb) =>{
   cb()
 })
 
+gulp.task('server', (cb) =>{
+  browserSync.init({
+    server:{
+      baseDir: "./dist"
+    }
+  });
+});
+
 gulp.task('build', gulp.series('css-min', 'js-min', 'html', 'imgs', 'fonts'))
