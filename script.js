@@ -14,11 +14,12 @@ var bgimage = [
     'imgs/kazan_01.webp',
     'imgs/kazan_02.webp',
     'imgs/kazan_03.webp',
+    'imgs/kazan_04.webp',
+    'imgs/kazan_05.webp',
     'imgs/kazan_06.webp',
     'imgs/kazan_07.webp',
     'imgs/kazan_09.webp',
     'imgs/kazan_10.webp',
-    'imgs/kazan_12.webp',
 ];
 
 var positioning = [
@@ -40,89 +41,197 @@ window.onload = function(){
     $('.quote').html(quotes[Math.floor(Math.random()*quotes.length)])
 
     if(positioning[randomPos] == positioning[0]){ //top
-            $('.welcome__top').css({
-                'display':'flex'
-            });
-            $('.welcome__bottom').css({
-                'display':'none'
-            });
+            $('.welcome').css({
+                'padding': '0 6rem',
+                'align-items': 'flex-start',
+                'justify-content':'space-between'
+            })
             $('.welcome__main').css({
-                'display':'none'
+                'display':'flex',
+                'flex-direction':'row',
+                'height': 'auto',
+                'background': 'transparent',
+                'padding': 0,
+                'width':'auto'
             });
+            $('.welcome__content').css({
+                'display':'none'    
+            })
+            $('.welcome__copyright').css({
+                'height': '95%'
+            })
+            $('.welcome__header').css({
+                'padding': '2rem'
+            })
+            $('.welcome__action-button').css({
+                'padding': '2rem',
+                'width': 'auto'
+            })
 
     } if(positioning[randomPos] == positioning[1]){ //main
-        
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('.welcome__main').css({
-            'display':'flex'
-        });
-    } if(positioning[randomPos] == positioning[2]){ //bottom
-            $('.welcome__top').css({
-                'display':'none'
-            });
-            $('.welcome__bottom').css({
-                'display':'flex'
-            });
-            $('.welcome__main').css({
-                'display':'none'
-            });
-    } if(positioning[randomPos] == positioning[3]){ //top-right
-        $('.welcome__top').css({
-            'display':'flex'
-        })
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('welcome__main').css({
-            'display':'none'
-        })
         $('.welcome').css({
-            'display': 'flex',
-            'flex-direction': 'row-reverse'
+            'padding': '0 6rem',
+            'justify-content':'space-between',
+            'flex-direction': 'row'
         })
-    } if(positioning[randomPos] == positioning[4]){ //normal-right
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('.welcome__main').css({
-            'display':'flex'
-        });
-        $('.welcome').css({
-            'flex-direction': 'row-reverse'
-        });
-    } if(positioning[randomPos] == positioning[5]){ //bottom-right
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'flex'
-        });
-        $('.welcome').css({
-            'display': 'flex',
-            'flex-direction': 'row-reverse'
-        })
-    } 
-
-    if(window.matchMedia("(max-width: 992px)").matches){
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
         $('.welcome__main').css({
             'display':'flex',
+            'flex-direction':'column',
+            'height': 'auto',
+            'background': '#384d9b66',
+            'padding': '4rem 0',
+            'width': '25rem'
         });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
+        })
+    } if(positioning[randomPos] == positioning[2]){ //bottom
         $('.welcome').css({
-            'flex-direction': 'column'
+            'padding': '0 6rem',
+            'align-items': 'flex-end',
+            'justify-content':'space-between'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '1rem 2rem',
+            'width': 'auto'
+        })
+    } if(positioning[randomPos] == positioning[3]){ //top-right
+        $('.welcome').css({
+            'padding': '0 6rem',
+            'align-items': 'flex-start',
+            'justify-content':'space-between',
+            'flex-direction':'row-reverse'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto',
+        });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
+        })
+    } if(positioning[randomPos] == positioning[4]){ //normal-right
+        $('.welcome').css({
+            'padding': '0 6rem',
+            'justify-content':'space-between',
+            'flex-direction': 'row-reverse'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'column',
+            'height': 'auto',
+            'background': '#384d9b66',
+            'padding': '4rem 0',
+            'width':'25rem',
+        });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
+        })
+    } if(positioning[randomPos] == positioning[5]){ //bottom-right
+        $('.welcome').css({
+            'padding': '0 6rem',
+            'align-items': 'flex-end',
+            'justify-content':'space-between',
+            'flex-direction':'row-reverse'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '1rem 2rem',
+            'width': 'auto'
+        })
+    } 
+    if(window.matchMedia("(max-width: 992px)").matches){
+        $('.welcome').css({
+            'padding': '0',
+            'justify-content':'space-between',
+            'flex-direction': 'column',
+            'align-items': 'stretch'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'column',
+            'height': '100%',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': 'auto'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem 0'
+        })
+        $('.welcome__action-button').css({
+            'padding': '11px',
+            'width': 'auto'
         })
     }
 };
@@ -132,103 +241,198 @@ var mq = window.matchMedia("(max-width: 992px)")
 
 function handleChanges(e){
     if(e.matches){
-            $('.welcome__top').css({
-                'display':'none'
-            });
-            $('.welcome__bottom').css({
-                'display':'none'
-            });
-            $('.welcome__main').css({
-                'display':'flex',
-            });
-            $('.welcome').css({
-                'flex-direction': 'column'
-            })
+        $('.welcome').css({
+            'padding': '0',
+            'justify-content':'space-between',
+            'flex-direction': 'column',
+            'align-items':'stretch'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'column',
+            'height': '100%',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': 'auto'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem 0'
+        })
+        $('.welcome__action-button').css({
+            'padding': '11px',
+            'width': 'auto'
+        })
     } else{
         if(positioning[randomPos] == positioning[0]){ //top
-            $('.welcome__top').css({
-                'display':'flex'
-            });
-            $('.welcome__bottom').css({
-                'display':'none'
-            });
-            $('.welcome__main').css({
-                'display': 'none'
-            })
             $('.welcome').css({
-                'flex-direction':'row'
+                'padding': '0 6rem',
+                'align-items': 'flex-start',
+                'justify-content':'space-between',
+                'flex-direction': 'row'
+            })
+            $('.welcome__main').css({
+                'display':'flex',
+                'flex-direction':'row',
+                'height': 'auto',
+                'background': 'transparent',
+                'padding': 0,
+                'width':'auto'
+            });
+            $('.welcome__content').css({
+                'display':'none'    
+            })
+            $('.welcome__copyright').css({
+                'height': '95%'
+            })
+            $('.welcome__header').css({
+                'padding': '2rem'
+            })
+            $('.welcome__action-button').css({
+                'padding': '2rem',
+                'width': 'auto'
             })
     } if(positioning[randomPos] == positioning[1]){ //main
-        
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('.welcome__main').css({
-            'display':'flex'
-        });
         $('.welcome').css({
-            'flex-direction':'row'
+            'padding': '0 6rem',
+            'justify-content':'space-between',
+            'flex-direction': 'row'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'column',
+            'height': 'auto',
+            'background': '#384d9b66',
+            'padding': '4rem 0',
+            'width': '25rem'
+        });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
         })
     } if(positioning[randomPos] == positioning[2]){ //bottom
-            $('.welcome__top').css({
-                'display':'none'
-            });
-            $('.welcome__bottom').css({
-                'display':'flex'
-            });
-            $('.welcome__top-right').css({
-                'display':'none'
-            });
+           $('.welcome').css({
+            'padding': '0 6rem',
+            'align-items': 'flex-end',
+            'justify-content':'space-between',
+            'flex-direction':'row'
+            })
             $('.welcome__main').css({
-                'display':'none'
-            })
-            $('.welcome').css({
-                'flex-direction':'row'
-            })
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+            });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '1rem 2rem',
+            'width': 'auto'
+        })
     } if(positioning[randomPos] == positioning[3]){ //top-right
-        $('.welcome__top').css({
-            'display':'flex'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('.welcome__main').css({
-            'display':'none'
-        });
         $('.welcome').css({
-            'display': 'flex',
-            'flex-direction': 'row-reverse'
+            'padding': '0 6rem',
+            'align-items': 'flex-start',
+            'justify-content':'space-between',
+            'flex-direction':'row-reverse',
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
         })
     } if(positioning[randomPos] == positioning[4]){ //normal-right
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'none'
-        });
-        $('.welcome__main').css({
-            'display':'flex'
-        });
         $('.welcome').css({
+            'padding': '0 6rem',
+            'justify-content':'space-between',
+            'flex-direction': 'row-reverse'
+        })
+        $('.welcome__main').css({
             'display':'flex',
-            'flex-direction': 'row-reverse'
+            'flex-direction':'column',
+            'height': 'auto',
+            'background': '#384d9b66',
+            'padding': '4rem 0',
+            'width': '25rem'
         });
-    } if(positioning[randomPos] == positioning[5]){ //bottom-right
-        $('.welcome__top').css({
-            'display':'none'
-        });
-        $('.welcome__bottom').css({
-            'display':'flex'
-        });
-        $('.welcome__main').css({
-            'display':'none'
-        });
+        $('.welcome__content').css({
+            'display':'flex'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            
+        })
+        $('.welcome__action-button').css({
+            'padding': '2rem',
+            'width': 'auto'
+        })
+    }  if(positioning[randomPos] == positioning[5]){ //bottom-right
         $('.welcome').css({
-            'display': 'flex',
+            'padding': '0 6rem',
+            'align-items': 'flex-end',
+            'justify-content':'space-between',
             'flex-direction': 'row-reverse'
+        })
+        $('.welcome__main').css({
+            'display':'flex',
+            'flex-direction':'row',
+            'height': 'auto',
+            'background': 'transparent',
+            'padding': 0,
+            'width':'auto'
+        });
+        $('.welcome__content').css({
+            'display':'none'    
+        })
+        $('.welcome__copyright').css({
+            'height': '95%'
+        })
+        $('.welcome__header').css({
+            'padding': '2rem'
+        })
+        $('.welcome__action-button').css({
+            'padding': '1rem 2rem',
+            'width': 'auto'
         })
     }
     }
